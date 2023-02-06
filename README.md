@@ -4,7 +4,7 @@
 
 Consiste en un código de programación que se pueda reutilizar para objetos de diversos tipos.
 
-<p align="center"> <img width="600" height="200" src="![image](https://user-images.githubusercontent.com/92431188/216878887-b7907c24-0542-48e4-958f-5b198ab6cece.png)"> </p>
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/216878887-b7907c24-0542-48e4-958f-5b198ab6cece.png"> </p>
 
 
 ¿Por qué se usa?
