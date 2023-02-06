@@ -1,4 +1,4 @@
-# Programación orientada a objetos
+# Programación
 
 ## Programación genérica
 
