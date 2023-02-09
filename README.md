@@ -54,7 +54,7 @@ IMPORTANTE: la llamadas de los métodos hijos no pueden afetar
 Los constructores no herendan
 La primera línea de código de un constructor en la subclase(hija) debe llamar al constructor de la superclase(padre).
 
-
+Super es para la clase padre, y this para la propia clase.
 
 
 
