@@ -42,9 +42,11 @@ Programa ejecutandose.
 
 <p align="center"> <img src="https://user-images.githubusercontent.com/92431188/216885444-c782ea88-70c2-4df1-8679-5e2b0bcefb19.png"> </p>
 
+## Herencia
 
+La superclase de todas las clases es Object
 
-
+La propagación de herencia es que todos los métodos del padre son heredados por los hijos, el último se conoce como clase FINAL.
 
 
 
