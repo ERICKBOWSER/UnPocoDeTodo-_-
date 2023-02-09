@@ -48,6 +48,12 @@ La superclase de todas las clases es Object
 
 La propagación de herencia es que todos los métodos del padre son heredados por los hijos, el último se conoce como clase FINAL.
 
+IMPORTANTE: los métodos de las clases hijas no son visibles desde la clase padre.
+IMPORTANTE: la llamadas de los métodos hijos no pueden afetar
+
+Los constructores no herendan
+La primera línea de código de un constructor en la subclase(hija) debe llamar al constructor de la superclase(padre).
+
 
 
 
