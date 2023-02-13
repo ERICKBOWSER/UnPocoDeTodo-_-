@@ -44,18 +44,37 @@ Programa ejecutandose.
 
 ## Herencia
 
+### IMPORTANTE
+Los métodos de las clases hijas no son visibles desde la clase padre.
+***
+La llamadas de los métodos hijos no pueden afetar
+***
+Super es para la clase padre, y this para la propia clase.
+***
 La superclase de todas las clases es Object
+**
+
+En Java sólo existe la herencia simple, esto es, una clase sólo puede heredar de otra, aunque a su vez esta otra herede de otra, y así sucesivamente.
+
+La herencia permite la reutilización del código.
+
+Las clases hijas pueden acceder a atributosy métodos de la clase padre(siempre y cuando sean visibles) pero no ocurre lo mismo al contrario.
 
 La propagación de herencia es que todos los métodos del padre son heredados por los hijos, el último se conoce como clase FINAL.
-
-IMPORTANTE: los métodos de las clases hijas no son visibles desde la clase padre.
-IMPORTANTE: la llamadas de los métodos hijos no pueden afetar
 
 Los constructores no herendan
 La primera línea de código de un constructor en la subclase(hija) debe llamar al constructor de la superclase(padre).
 
-Super es para la clase padre, y this para la propia clase.
+Para indicar que una clase hereda de otra se coloca:
 
+`public class nombreSubClase extends nombreSuperClase{}`
+
+Definir una subclase implica:
+* Una subclase hereda todos los miembros de su superclase, excepto los constructores, y:
+* * No tiene acceso a los miembros private de su superclase.
+* * Puede acceder a los miembros public y protected de la superclase.
+* Un subclase puede añadir sus propios atributos y métodos. Si el nombre de algún miembro coincide con el de un miembro heredado, éste último queda oculto para la subclase.
+* Propagación de herencia: los miembros heredados por una subclase pueden ser heredados por más subclases de ella.
 
 
 
