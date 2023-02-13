@@ -45,14 +45,23 @@ Programa ejecutandose.
 ## Herencia
 
 ### IMPORTANTE
-Los métodos de las clases hijas no son visibles desde la clase padre.
+Los métodos de las clases hijas no son visibles desde la clase padre. Por lo que no puede usarlos.
 ***
 La llamadas de los métodos hijos no pueden afetar
 ***
 Super es para la clase padre, y this para la propia clase.
 ***
 La superclase de todas las clases es Object
-**
+***
+Es posible acceder a los atributos de la superclase si no fuesen private. Pero si lo son se puede acceder mediante sus métodos getters y setters.
+***
+Los únicos métodos que no se heredan en una jerarquía de herencia son los constructores.
+***
+Al implementar constructores es obligatorio llamar al constructor de la superclase en el constructor de la clase hija, haciendo uso de la instrucción "super()"
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/218369175-0ee220b4-1047-49bc-a1ee-29704a881554.png"> </p>
+***
+
 
 En Java sólo existe la herencia simple, esto es, una clase sólo puede heredar de otra, aunque a su vez esta otra herede de otra, y así sucesivamente.
 
@@ -76,7 +85,13 @@ Definir una subclase implica:
 * Un subclase puede añadir sus propios atributos y métodos. Si el nombre de algún miembro coincide con el de un miembro heredado, éste último queda oculto para la subclase.
 * Propagación de herencia: los miembros heredados por una subclase pueden ser heredados por más subclases de ella.
 
+## Utilizar métodos de la superclase
 
+Si hay dos métodos que tienen el mismo nombre, pero uno esta en la clase padre y otro en el hijo, se puede usar la palabra 'super' para hacer referencia al método del padre.
+
+Método padre dentro de una clase hija:
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/218368470-21d58412-1f8b-4968-b0c2-960b291c17ca.png"> </p>
 
 
 
