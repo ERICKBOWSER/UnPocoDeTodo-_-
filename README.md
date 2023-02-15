@@ -1,5 +1,22 @@
 # Programación
 
+## Set
+
+La interfaz Set es una colección que NO permite elementos duplicados. Si se añade un elemento que ya existe no se modifica la colección y devuelve false.
+
+Es imprescindible implementar equals y hashcode.
+
+Clases más usadas:
+
+* HashSet
+* * Tiene mejor rendimiento.
+* * No garantiza ningún orden de los elementos.
+* TreeSet 
+* * Necesita que los elementos implementen la interfaz Comparable.
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/218928588-cb0165e7-5ba4-486f-b5b5-3a2c4ee61169.png"> </p>
+
+
 ## Programación genérica
 
 Consiste en un código de programación que se pueda reutilizar para objetos de diversos tipos. Se adapta al tipo de dato que le este pasando el usuario.
