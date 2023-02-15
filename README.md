@@ -16,6 +16,39 @@ Clases más usadas:
 
 <p align="center"> <img src="https://user-images.githubusercontent.com/92431188/218928588-cb0165e7-5ba4-486f-b5b5-3a2c4ee61169.png"> </p>
 
+## Collections
+Es un almacén de objetos dinámicos. Es decir, que puede cambiar de tamaño, no esta limitado como el array.
+
+* Ordenación(sort)
+* * Implementan `<<Comparable>>`
+* * * CompareTo
+
+* Búsqueda(BynarySearch)
+* * Implementan `<<Comparable>>`
+* * `<<Comparator>>`
+
+### Búsqueda binaria
+
+Divide la lista por la mitad y luego realiza la búsqueda del criterio a buscar. Para ello el objeto tiene que estar ordenado(Siempre).
+
+**IMPORTANTE: todos los métodos comparable tienen que implementar métodos abstractos.**
+
+Clase Pojo (orden natural)
+* `<<Comparable>>` // Tiene que implementar métodos abstractos.
+* * CompareTo (objeto o Pojo)
+
+***
+### IMPORTANTE
+
+* Todos los métodos comparable tienen que implementar métodos abstractos. La variable con la que se hace el compareTo tiene que ser de tipo String.
+* No es recomendable usar la clase record.
+
+***
+
+### Métodos
+`reversed()`
+* Devuelve el orden inverso
+
 
 ## Programación genérica
 
