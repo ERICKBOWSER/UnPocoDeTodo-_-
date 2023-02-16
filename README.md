@@ -11,6 +11,7 @@ Clases más usadas:
 * HashSet
 * * Tiene mejor rendimiento.
 * * No garantiza ningún orden de los elementos.
+* * Se permite el uso de elementos nulos.
 * TreeSet 
 * * Necesita que los elementos implementen la interfaz Comparable.
 
