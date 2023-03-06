@@ -225,6 +225,92 @@ De esta forma ya nos salen los métodos del hijo, por lo que ya se le puede apli
 IMPORTANTE: esto solo se puede hacer ya que cuando se creo al empleado se hizo de tipo Jefatura, si se intenta con un empleado de tipo Empleado daría error.
 ***
 
+## Clases y métodos final
+
+### Clases final
+
+Se usa para que por ejemplo no se puedan crear más hijos de una clase.
+
+Código: `final class nombreClase extends claseExtiende{}`
+
+Esto hace que ya no se puedan crear más herencias de ella.
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/223016971-a2a1407a-c000-457f-bf04-236595c22c95.png"> </p>
+
+### Métodos final
+
+Se usa para que no se puedan crear métodos con el mismo nombre en las clases que hereden la clase en la que ha sido definida.
+
+Código: `public final tipo nombreMetodo()`
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/223017676-ea343bb9-a12d-4573-aafe-c3839ac76a9c.png"> </p>
+
+Si un hijo tiene un método con el mismo nombre nos saldrá un error informandonos que no se puede sobreescribir ya que es un método final. Pasa solucionarlo bastaría con cambiar el nombre en el hijo o el padre.
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/223017726-e1083890-c38b-41ab-82fc-084ac4db53ab.png"> </p>
+
+## Clases abstractas
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/223020761-1bb33056-51a5-4fa6-8c1b-45ae3fc07d41.png"> </p>
+
+### IMPORTANTE
+
+Cuando se define un método como abstracto también se tiene que definir a la clase. Se usa cuando los datos tienen que ser diferentes.
+
+Ejemplo de definir un método abstracto sin hacerlo antes en el padre.
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/223021841-fbff0c9b-fa90-4435-b6b8-15e46b681520.png"> </p>
+
+***
+
+Cuando se define un método como abstracto, el resto de clases estan **obligadas** a sobreescribir ese método. Es decir, que en cada uno hay que crear un método con el mismo nombre y construirlo para esa clase en especifico.
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/223022532-ffe8c58e-6186-441b-b1cc-aec9f22ca318.png"> </p>
+
+Una vez creado y definido el método desaparece el error.
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/223022962-040c5b16-dd11-4438-8d6b-8b702b7d06fc.png"> </p>
+
+***
+
+Definir un método abstracto: `public abstract tipo nombreMetodo();`
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/223021752-1403d23a-5a67-4292-b7d9-8395a41a001b.png"> </p>
+
+Definir una clase abstracta: `abstract class nombreClase{}`
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/223022047-ab371d8e-0cb3-4d1f-abe7-1e39946690d8.png"> </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
