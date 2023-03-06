@@ -155,7 +155,7 @@ Una clase que hereda al padre, puede usar sus métodos.
 
 <p align="center"> <img src="https://user-images.githubusercontent.com/92431188/222995088-01215761-51dc-4171-bb4f-ad97e08c9e74.png"> </p>
 
-## Diseño de una herencia
+## Ejemplo de diseño de una herencia
 
 preguntas para identificar cuál será la superclase y la subclase.
 
@@ -193,12 +193,37 @@ La máquina virtual de Java es capaz en tiempo de ejecución de saber a que mét
 
 <p align="center"> <img src="https://user-images.githubusercontent.com/92431188/223007839-1985ea8d-d02d-48c1-b2e0-8ac248c0c719.png"> </p>
 
+### Casting de datos
 
+Se usa para cambiar el tipo de una variable.
 
+`tipo variableNuevo = (tipoACambiar) variableCambiar`
 
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/223009915-527de311-704c-4d7d-b9a5-1e55ab461efb.png"> </p>
 
+### Casting de objetos
 
+`tipoNuevaEntidad variablenuevo = (tipoEntidadACambiar) variableCambiar`
 
+Ejemplo: `Jefatura jefe_Finanzas = (Jefatura) misEmpleados[5];`
+
+Regla de "Es un..."
+
+Siguiendo esta regla, al intentar añadirle un incentivo al empleado 5 que pertenece a la clase jefatura no nos sale el método, ya que misEmpleados[5] es de tipo Empleado y no de Jefatura a pesar de que se defina uno dentro.
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/223009404-7296a09a-1102-44c2-a153-d49381b593f6.png"> </p>
+
+Para solucionar esto se hace un casting de objetos en el que convertimos a misEmpleados[5] de tipo empleado en un objeto de tipo Jefatura.
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/223010791-231f70ae-2549-4c57-b143-194586a75e47.png"> </p>
+
+De esta forma ya nos salen los métodos del hijo, por lo que ya se le puede aplicar el incentivo.
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/223011005-ae1f2a81-6b74-4372-ad7e-76cdb203223d.png"> </p>
+
+***
+IMPORTANTE: esto solo se puede hacer ya que cuando se creo al empleado se hizo de tipo Jefatura, si se intenta con un empleado de tipo Empleado daría error.
+***
 
 
 
