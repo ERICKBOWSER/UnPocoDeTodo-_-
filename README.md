@@ -98,32 +98,30 @@ Programa ejecutandose.
 ### IMPORTANTE
 Los métodos de las clases hijas no son visibles desde la clase padre. Por lo que no puede usarlos.
 ***
-La llamadas de los métodos hijos no pueden afetar
+La llamada de los métodos hijos no pueden afectar.
 ***
-Super es para la clase padre, y this para la propia clase.
+**Super** es para la clase padre, y **this** para la propia clase.
 ***
-La superclase de todas las clases es Object
+La superclase de todas las clases es **Object**.
 ***
-Es posible acceder a los atributos de la superclase si no fuesen private. Pero si lo son se puede acceder mediante sus métodos getters y setters.
+Es posible acceder a los atributos de la superclase si no son **private**. Pero si lo son se puede acceder mediante sus métodos **getters** y **setters**.
 ***
-Los únicos métodos que no se heredan en una jerarquía de herencia son los constructores.
+Los únicos métodos que no se heredan en una jerarquía de herencia son los constructores. Por lo que hay que crear un constructor para inicializar en todas las clases que heredan.
 ***
-Al implementar constructores es obligatorio llamar al constructor de la superclase en el constructor de la clase hija, haciendo uso de la instrucción "super()"
+Al implementar constructores es **obligatorio** llamar al constructor de la superclase en el constructor de la clase hija, haciendo uso de la instrucción **super()**
 
 <p align="center"> <img src="https://user-images.githubusercontent.com/92431188/218369175-0ee220b4-1047-49bc-a1ee-29704a881554.png"> </p>
 ***
-
-
-En Java sólo existe la herencia simple, esto es, una clase sólo puede heredar de otra, aunque a su vez esta otra herede de otra, y así sucesivamente.
-
+En Java sólo existe la **herencia simple**, esto es, una clase sólo puede heredar de otra, aunque a su vez esta otra herede de otra, y así sucesivamente.
+***
 La herencia permite la reutilización del código.
+***
+Las clases hijas pueden acceder a atributos y métodos de la clase padre(siempre y cuando sean visibles) pero no ocurre lo mismo al contrario.
+***
+La propagación de herencia es que todos los métodos del padre son heredados por los hijos, **el último se conoce como clase FINAL**.
+***
 
-Las clases hijas pueden acceder a atributosy métodos de la clase padre(siempre y cuando sean visibles) pero no ocurre lo mismo al contrario.
-
-La propagación de herencia es que todos los métodos del padre son heredados por los hijos, el último se conoce como clase FINAL.
-
-Los constructores no herendan
-La primera línea de código de un constructor en la subclase(hija) debe llamar al constructor de la superclase(padre).
+## Establecer que una clase hereda de otra
 
 Para indicar que una clase hereda de otra se coloca:
 
