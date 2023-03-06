@@ -95,6 +95,9 @@ Programa ejecutandose.
 
 ## Herencia
 
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/222995680-3a18aefb-c048-4460-b0ab-1112ce966266.png"> </p>
+
+
 ### IMPORTANTE
 Los métodos de las clases hijas no son visibles desde la clase padre. Por lo que no puede usarlos.
 ***
@@ -108,9 +111,12 @@ Es posible acceder a los atributos de la superclase si no son **private**. Pero 
 ***
 Los únicos métodos que no se heredan en una jerarquía de herencia son los constructores. Por lo que hay que crear un constructor para inicializar en todas las clases que heredan.
 ***
-Al implementar constructores es **obligatorio** llamar al constructor de la superclase en el constructor de la clase hija, haciendo uso de la instrucción **super()**
+Al implementar constructores es **obligatorio** llamar al constructor de la superclase en el constructor de la clase hija, haciendo uso de la instrucción **super()**.
+
+super() es encarga de llamar al constructor de la clase padre para darle un estado inicial a la clase del contructor hijo.
 
 <p align="center"> <img src="https://user-images.githubusercontent.com/92431188/218369175-0ee220b4-1047-49bc-a1ee-29704a881554.png"> </p>
+
 ***
 En Java sólo existe la **herencia simple**, esto es, una clase sólo puede heredar de otra, aunque a su vez esta otra herede de otra, y así sucesivamente.
 ***
@@ -119,6 +125,7 @@ La herencia permite la reutilización del código.
 Las clases hijas pueden acceder a atributos y métodos de la clase padre(siempre y cuando sean visibles) pero no ocurre lo mismo al contrario.
 ***
 La propagación de herencia es que todos los métodos del padre son heredados por los hijos, **el último se conoce como clase FINAL**.
+
 ***
 
 ## Establecer que una clase hereda de otra
@@ -142,6 +149,49 @@ Método padre dentro de una clase hija:
 
 <p align="center"> <img src="https://user-images.githubusercontent.com/92431188/218368470-21d58412-1f8b-4968-b0c2-960b291c17ca.png"> </p>
 
+## Reutilización de código
+
+Una clase que hereda al padre, puede usar sus métodos.
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/222995088-01215761-51dc-4171-bb4f-ad97e08c9e74.png"> </p>
+
+## Diseño de una herencia
+
+preguntas para identificar cuál será la superclase y la subclase.
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/222996483-78006a33-e207-483c-b9c2-39b831f480fc.png"> </p>
+
+Clase padre
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/222996705-1b2fcfdd-7b3a-4637-99c7-0ebd1212e4f5.png"> </p>
+
+Da error ya que Java entiende que se esta llamando al constructor por defecto del padre.
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/222996790-afd890ad-f54d-4b89-be44-64415d88f167.png"> </p>
+
+Para solucionarlo hay que crear un constructor y luego llamar al padre con super(). En este ejemplo el constructor del padre solicita datos, por lo que le pasamos los datos a traves del método **super()**
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/222998002-7a23afef-dbac-4f5e-982d-48fec0683b79.png"> </p>
+
+Sobreescribir un método que ya existe en el padre.
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/223003183-113cdc8f-de8a-43d7-9fbe-dad478f73e37.png"> </p>
+
+### Polimorfismo
+
+Principio de sustitución: se puede utilizar un objeto de la subclase siempre que el programa espere un objeto de la superclase.
+
+O lo que es lo mismo: un objeto su puede comportar de diferentes formas dependiendo del contexto. Las variables objeto son polimórficas.
+
+En este ejemplo, el array misEmpleados esta esperando un nueva instancia de tipo Empleado, pero en cambio se le pasa un objeto de tipo Jefatura, a esto se le denomina principio de sustitución.
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/223005465-36adf9ef-6883-4ba5-9d47-3848f07a3be7.png"> </p>
+
+### Enlazado dinámico
+
+La máquina virtual de Java es capaz en tiempo de ejecución de saber a que método perteneciente a la clase padre o a la subclase tiene que llamar.
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/223007839-1985ea8d-d02d-48c1-b2e0-8ac248c0c719.png"> </p>
 
 
 
