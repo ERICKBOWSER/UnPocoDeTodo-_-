@@ -17,6 +17,16 @@ Clases más usadas:
 
 <p align="center"> <img src="https://user-images.githubusercontent.com/92431188/218928588-cb0165e7-5ba4-486f-b5b5-3a2c4ee61169.png"> </p>
 
+## Map
+
+### Métodos
+
+replace()
+*  si no existe no hace nada.
+
+put()
+* si no existe lo añade.
+
 ## Collections
 Es un almacén de objetos dinámicos. Es decir, que puede cambiar de tamaño, no esta limitado como el array.
 
