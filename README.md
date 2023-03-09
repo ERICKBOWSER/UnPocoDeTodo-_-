@@ -257,8 +257,11 @@ Si un hijo tiene un método con el mismo nombre nos saldrá un error informandon
 
 Si se implementa el método abstracto y tiene un hijo, que a su vez tiene otro hijo y este implementa el método abstracto, no hace falta que su padre también lo haga.
 
+***
 
 Cuando se define un método como abstracto también se tiene que definir a la clase. Se usa cuando los datos tienen que ser diferentes.
+
+***
 
 Ejemplo de definir un método abstracto sin hacerlo antes en el padre.
 
