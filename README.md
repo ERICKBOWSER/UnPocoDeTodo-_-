@@ -1,5 +1,21 @@
 # Programación
 
+## API de Java
+
+Los paquetes que estan en cursiva son interfaces, no clases.
+
+Si un método es **static void**, dado que es estatico y no devuelve nada, estamos obligados a usar el nombre de la clase primero seguido del nombre del método.
+
+Ejemplo: `Arrays.sort();`
+* Arrays es la clase.
+* sort() el método de la clase.
+
+
+## Teoría
+
+Sobrecarga de métodos: dependiendo del número de parametros y el tipo del parametro se usa uno u otro. Estos tienen que estar definidos.
+
+
 ## Set
 
 La interfaz Set es una colección que NO permite elementos duplicados. Si se añade un elemento que ya existe no se modifica la colección y devuelve false.
