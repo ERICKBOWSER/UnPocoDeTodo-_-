@@ -15,6 +15,51 @@ Ejemplo: `Arrays.sort();`
 
 Sobrecarga de métodos: dependiendo del número de parametros y el tipo del parametro se usa uno u otro. Estos tienen que estar definidos.
 
+## Array
+
+¿Qué es?
+
+Estructura de datos que contiene una colección de valores del mismo tipo.
+
+¿Para que se usa?
+
+Para almacenar valroes que normalmente tienen alguna relación entre sí.
+
+Código: `tipo[] nombreArray = new tipo[tamanio]`
+
+* **tipo[]** es el tipo de dato que va a almacenar(String, int, double, object, etc.)
+* **nombreArray** es el nombre que va a tener.
+* **new tipo[]** para crear el array y especificar el tipo de dato que va a almacenar.
+* **tamanio** es el tamaño que va a tener, es decir, el número de indices.
+
+### Declaración de un array
+
+Ejemplo de declaración de array de tipo entero(int) que tiene un tamaño de 5.
+
+Código: `int[] array = new int[5];`
+
+Representación gráfica
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/224519473-3b8b602d-c56f-49f3-bc47-d938b567f941.png"> </p>
+
+### Inicializar
+
+Introducir datos en el array.
+
+Código: `nombreArray[posicion] = dato;`
+
+Ejemplo: `array[2] = 50`;
+
+
+### Declarar e inicializar un array
+
+Consiste en introducir datos en el array al crearlo.
+
+Código: `tipo[] nombreArray = {dato1, dato2, etc...};`
+
+Ejemplo: `int[] array = {15, 25, -8, 7, 88};`
+
+IMPORTANTE: para actualizar un dato hay que sobreescribirlo poniendo la posición en la que se encuentre.
 
 ## Set
 
