@@ -15,6 +15,16 @@ Ejemplo: `Arrays.sort();`
 
 Sobrecarga de métodos: dependiendo del número de parametros y el tipo del parametro se usa uno u otro. Estos tienen que estar definidos.
 
+## Cosas a tener en cuenta
+
+Si se pide un dato por pantalla dentro de un **try catch** se tiene que limpiar el Scanner después de pillar el error. Sobretodo si esta dentro de un bucle ya que solo se ejecutara el error.
+
+Forma correcta.
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/224524332-519e14a7-c3fc-4cc7-8c79-45025ba94703.png"> </p>
+
+
+
 ## Array
 
 ¿Qué es?
