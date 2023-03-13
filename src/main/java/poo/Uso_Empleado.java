@@ -4,7 +4,12 @@
  */
 package poo;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.Iterator;
+
+
 
 /**
  *
@@ -49,6 +54,31 @@ public class Uso_Empleado {
         
         misEmpleados[3] = new Empleado("Jaime Despa");
         
+        // -------------- ArrayList --------------------------
+        
+        ArrayList <Empleado> listaEmpleados = new ArrayList<Empleado>();
+        
+        listaEmpleados.add(new Empleado("Ana", 45, 2300));
+        listaEmpleados.add(new Empleado("Antonio", 55, 2000));
+        listaEmpleados.add(new Empleado("María", 25, 2600));
+        
+        
+        System.out.println(listaEmpleados.size());
+        
+        for (Empleado e : listaEmpleados) {
+            System.out.println(e.dameDatos());
+        }
+        
+        // Convertir ArrayList en Array
+        
+        Empleado arrayEmpleados[] = new Empleado[listaEmpleados.size()]; // Declaración de array y tamaño
+        
+        listaEmpleados.toArray(arrayEmpleados); // Convertir ArrayList en array
+        
+        for(int i = 0; i < arrayEmpleados.length; i++){
+            System.out.println(arrayEmpleados[i].dameDatos());
+        }
+        
         // ------------------------------------------------------------------------------------
         
         // For tradicional
@@ -75,6 +105,8 @@ public class Uso_Empleado {
                     "\rFecha de Alta: " + e.dameFechaContrato() );
         }
         
+        //Iterator <Empleado> iterador = 
+        
         
     }
 }
@@ -88,6 +120,12 @@ class Empleado{
         GregorianCalendar calendario = new GregorianCalendar(anio, mes - 1, dia);
         altaContrato = calendario.getTime();
         
+    }
+    
+    public Empleado(String nom, int edad, double sueldo){
+       this.nombre = nom;
+       this.edad = edad;
+       this.sueldo = sueldo;
     }
     
     public Empleado(String nom){
@@ -113,6 +151,11 @@ class Empleado{
         sueldo += aumento;
     }
     
+    public String dameDatos(){
+        String res = "El empleado se llama " + this.nombre + ", tiene " + this.edad + ". Y un salario de " + this.sueldo;
+        
+        return res;
+    }
     
     
     
@@ -120,6 +163,8 @@ class Empleado{
     private String nombre;
     private double sueldo;
     private Date altaContrato;
+    
+    private int edad;
     
 }
 

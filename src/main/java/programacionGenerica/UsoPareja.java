@@ -10,28 +10,38 @@ package programacionGenerica;
  */
 public class UsoPareja {
     public static void main(String[] args) {
+        
+        // Ejemplo 1
         Pareja<String> una = new Pareja<String>();
-        
-        una.setPrimero("Jacob");
-        
+     
+     
+        una.setPrimero("Juan");// Cambiamos el parametro null de la variable genérica primero
+     
         System.out.println(una.getPrimero());
-
+     
+        // Ejemplo 2
         Persona pers1 = new Persona("Ana");
         
-        Pareja<Persona> per1 = new Pareja<Persona>();
+        Pareja<Persona> persona = new Pareja<Persona>();
         
-        per1.setPrimero(pers1);
-        System.out.println(per1.getPrimero());
-                
+        persona.setPrimero(pers1);
+        
+        System.out.println(persona.getPrimero());
+        
+        
+    
+    }        
+       
     }
-    
 
-    
-}
-
-    class Persona{
+class Persona{
         public Persona(String nombre){
             this.nombre = nombre;
         }
+        
+        public String toString(){
+            return nombre;
+        }
+                
         private String nombre;
     }

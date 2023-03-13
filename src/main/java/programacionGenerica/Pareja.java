@@ -14,17 +14,16 @@ public class Pareja<T> {
         primero = null;
     }
     
+    // Cambiar el dato
     public void setPrimero(T nuevoValor){
-        primero = nuevoValor;
+        primero = nuevoValor; // Convierte el valor en tipo de dato que se esta dando.
     }
     
+    // Como no se sabe el tipo de dato que se va a recibir se coloca T
     public T getPrimero(){
         return primero;
     }
     
     private T primero;
-    
-    
-    
-    
+
 }
