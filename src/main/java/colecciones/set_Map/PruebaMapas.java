@@ -25,6 +25,22 @@ public class PruebaMapas {
         personal.remove("147");
         System.out.println(personal);
         
+        //System.out.println(personal.entrySet());
+        
+        // Bucle foreach para recorrer elemento a elementos la colección para que nos devuelva los datos en forma de Set()
+        
+        for(Map.Entry<String, Empleado> entrada : personal.entrySet()){ // Devuelve lo que hay almacenado en forma de Set()
+            
+            // Almacenar los datos
+            String clave = entrada.getKey();            
+            Empleado valor = entrada.getValue();
+            
+            System.out.println("Clave = " + clave + ", Valor = " + valor);
+            
+            
+        }
+        
+        
     }
 }
 
