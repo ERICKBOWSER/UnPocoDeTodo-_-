@@ -71,6 +71,42 @@ Ejemplo: `int[] array = {15, 25, -8, 7, 88};`
 
 IMPORTANTE: para actualizar un dato hay que sobreescribirlo poniendo la posición en la que se encuentre.
 
+## Arrays multidimensionales(Matrices)
+
+Representación gráfica
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/224581880-7b09ca77-e3ee-438a-8457-42e67330b4ee.png"> </p>
+
+### Declaración de matriz
+
+Código: `tipo[][] nombreMatriz = new tipo[tamanioColumna][tamanioFila]`;
+
+Ejemplo: `int[][] matriz = new int[4][5];`
+
+### Inicialización
+
+Código: `nombreMatriz[indiceColumna][indiceFila] = dato;`
+
+Ejemplo: `matriz[5][2] = 10;`
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/224582216-4623828f-fd4d-45db-9f1c-7951a89244f5.png"> </p>
+
+### Declaración e inicialización
+
+Código: `tipo[][] nombreMatriz = {{dato1, dato2}, {dato1, dato2}}`
+
+Ejemplo: `int[][] matriz = {{5, 6}, {8, 4}, {6, 2}};`
+
+### Foreach 
+
+Foreach para recorrer todas las filas y columnas de la matriz.
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/224583022-5dcdfb94-e329-434f-9692-a2d5416f3d9d.png"> </p>
+
+
+
+
+
 ## Set
 
 La interfaz Set es una colección que NO permite elementos duplicados. Si se añade un elemento que ya existe no se modifica la colección y devuelve false.
