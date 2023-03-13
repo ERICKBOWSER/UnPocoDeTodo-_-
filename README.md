@@ -95,7 +95,7 @@ Ejemplo: `matriz[5][2] = 10;`
 
 Código: `tipo[][] nombreMatriz = {{dato1, dato2}, {dato1, dato2}}`
 
-Ejemplo: `int[][] matriz = {{5, 6}, {8, 4}, {6, 2}};`
+Ejemplo de matriz de 3 filas y 2 columnas: `int[][] matriz = {{5, 6}, {8, 4}, {6, 2}};`
 
 ### Foreach 
 
