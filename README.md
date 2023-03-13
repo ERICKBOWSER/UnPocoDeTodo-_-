@@ -1,10 +1,149 @@
 # Programación
 
-## Set
+## API de Java
 
+Los paquetes que estan en cursiva son interfaces, no clases.
+
+Si un método es **static void**, dado que es estatico y no devuelve nada, estamos obligados a usar el nombre de la clase primero seguido del nombre del método.
+
+Ejemplo: `Arrays.sort();`
+* Arrays es la clase.
+* sort() el método de la clase.
+
+
+## Teoría
+
+Sobrecarga de métodos: dependiendo del número de parametros y el tipo del parametro se usa uno u otro. Estos tienen que estar definidos.
+
+## Cosas a tener en cuenta
+
+Si se pide un dato por pantalla dentro de un **try catch** se tiene que limpiar el Scanner después de pillar el error. Sobretodo si esta dentro de un bucle ya que solo se ejecutara el error.
+
+Forma correcta.
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/224524332-519e14a7-c3fc-4cc7-8c79-45025ba94703.png"> </p>
+
+
+
+## Array
+
+¿Qué es?
+
+Estructura de datos que contiene una colección de valores del mismo tipo.
+
+¿Para que se usa?
+
+Para almacenar valroes que normalmente tienen alguna relación entre sí.
+
+Código: `tipo[] nombreArray = new tipo[tamanio]`
+
+* **tipo[]** es el tipo de dato que va a almacenar(String, int, double, object, etc.)
+* **nombreArray** es el nombre que va a tener.
+* **new tipo[]** para crear el array y especificar el tipo de dato que va a almacenar.
+* **tamanio** es el tamaño que va a tener, es decir, el número de indices.
+
+### Declaración de un array
+
+Ejemplo de declaración de array de tipo entero(int) que tiene un tamaño de 5.
+
+Código: `int[] array = new int[5];`
+
+Representación gráfica
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/224519473-3b8b602d-c56f-49f3-bc47-d938b567f941.png"> </p>
+
+### Inicializar
+
+Introducir datos en el array.
+
+Código: `nombreArray[posicion] = dato;`
+
+Ejemplo: `array[2] = 50`;
+
+
+### Declarar e inicializar un array
+
+Consiste en introducir datos en el array al crearlo.
+
+Código: `tipo[] nombreArray = {dato1, dato2, etc...};`
+
+Ejemplo: `int[] array = {15, 25, -8, 7, 88};`
+
+IMPORTANTE: para actualizar un dato hay que sobreescribirlo poniendo la posición en la que se encuentre.
+
+## Arrays multidimensionales(Matrices)
+
+Representación gráfica
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/224581880-7b09ca77-e3ee-438a-8457-42e67330b4ee.png"> </p>
+
+### Declaración de matriz
+
+Código: `tipo[][] nombreMatriz = new tipo[tamanioColumna][tamanioFila]`;
+
+Ejemplo: `int[][] matriz = new int[4][5];`
+
+### Inicialización
+
+Código: `nombreMatriz[indiceColumna][indiceFila] = dato;`
+
+Ejemplo: `matriz[5][2] = 10;`
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/224582216-4623828f-fd4d-45db-9f1c-7951a89244f5.png"> </p>
+
+### Declaración e inicialización
+
+Código: `tipo[][] nombreMatriz = {{dato1, dato2}, {dato1, dato2}}`
+
+Ejemplo de matriz de 3 filas y 2 columnas: `int[][] matriz = {{5, 6}, {8, 4}, {6, 2}};`
+
+### Foreach 
+
+Foreach para recorrer todas las filas y columnas de la matriz.
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/224583022-5dcdfb94-e329-434f-9692-a2d5416f3d9d.png"> </p>
+
+## ArrayList
+
+Métodos
+
+ensureCapacity(tamaño)
+- Crea un array con el tamaño que se especifique, pero si hace falta más espacio el array se seguirá rellenando.
+
+trimToSize()
+- Recorta el espacio sobrante, se suele colocar al final del array.
+
+## Iterador
+
+Nos permite acceder secuencialmente a los elementos de una colección.
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/224596861-5a7c1d56-d83e-4b6a-9d53-b5ae5576e016.png"> </p>
+
+
+# Colecciónes
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/224616976-c7838bd8-0e89-433f-9359-51e8c05d3485.png"> </p>
+
+
+### Importante
 La interfaz Set es una colección que NO permite elementos duplicados. Si se añade un elemento que ya existe no se modifica la colección y devuelve false.
 
+***
+
+Una colección no es capaz de almacenar datos primitivos.
+
+*** 
+
+Se puede insertar y eliminar datos de forma dinámica.
+
+***
+
 Es imprescindible implementar equals y hashcode.
+
+## Set
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/224618611-a034fd1f-8ed6-44a3-82b0-4dc09358bfd5.png"> </p>
+
 
 Clases más usadas:
 
@@ -16,6 +155,56 @@ Clases más usadas:
 * * Necesita que los elementos implementen la interfaz Comparable.
 
 <p align="center"> <img src="https://user-images.githubusercontent.com/92431188/218928588-cb0165e7-5ba4-486f-b5b5-3a2c4ee61169.png"> </p>
+
+### Declaración
+
+Código: `Set<tipoGenerico> nombreSet = new tipoClase();`
+
+Ejemplo: `Set<Cliente> clientes = new HashSet();`
+
+### Inicialización
+
+Código: nombreSet.add(dato);
+
+Ejemplo: `clientes.add(cliente1);`
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/224625283-f9ab62d8-a7bf-452e-9b77-c41af109b2fd.png"> </p> 
+
+Es imprescindible que lleven equals y hashcode para que no se incluyan los datos repetidos.
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/224636973-6a86be93-e90d-4c62-8997-0f07389e20ea.png"> </p> 
+
+
+
+## List
+
+Para poder crear colecciones de tipo List hay que hacer usando las clases ArrayList, LinkedList, Vector o CopyOnWriteArrayList.
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/224618287-70d1b843-6ebd-46a9-84c9-7f3065df873d.png"> </p>
+
+
+Cuando usar una clase u otra
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/224618465-6f6ccaa9-acaf-4186-a659-d92342ed03b2.png"> </p>
+
+
+
+## Map
+
+### Métodos
+
+replace()
+*  si no existe no hace nada.
+
+put()
+* si no existe lo añade.
+
+### Declaración
+
+Código: `tipoClase<k, v> nombreMap = new tipoClase();`
+
+Ejemplo: `HashMap<String, Empleado> personal = new HashMap();`
+
 
 ## Collections
 Es un almacén de objetos dinámicos. Es decir, que puede cambiar de tamaño, no esta limitado como el array.
@@ -55,8 +244,7 @@ Clase Pojo (orden natural)
 
 Consiste en un código de programación que se pueda reutilizar para objetos de diversos tipos. Se adapta al tipo de dato que le este pasando el usuario.
 
-<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/216878887-b7907c24-0542-48e4-958f-5b198ab6cece.png"> </p>
-
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/224604110-87588509-1c67-4167-87c0-5b55d87f8d1a.png"> </p>
 
 ¿Por qué se usa?
 * * Mayor sencillez del código.
@@ -75,13 +263,18 @@ Lo definimos colocando simbolos de mayor y menor  con una letra dentro en el nom
 
 Por convenio se suele colocar las letras T, U o K, pero también funciona con cualquier otra.
 
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/224605485-a29f8bcb-a6a9-4539-94be-acefd7d77197.png"> </p>
+
+
+
+
 ### Ejemplo
 
 Creamos un método que solicita un dato de tipo genérico.
 
 <p align="center"> <img src="https://user-images.githubusercontent.com/92431188/216883646-2085d50f-4228-4db9-92d9-bbba3d82a0ed.png"> </p>
 
-Creamos una nueva instancia en la que especificamos que el tipo de dato que se almacenará será de tipo String.
+Creamos una nueva instancia en la que especificamos el tipo de dato que va a almacenar la clase.
 
 <p align="center"> <img src="https://user-images.githubusercontent.com/92431188/216884000-ad23cfdc-d9d7-4166-90b1-c8244425e05b.png"> </p>
 
@@ -92,6 +285,21 @@ Al hacer uso de la instancia vemos que el tipo genérico se adapta al parámetro
 Programa ejecutandose.
 
 <p align="center"> <img src="https://user-images.githubusercontent.com/92431188/216885444-c782ea88-70c2-4df1-8679-5e2b0bcefb19.png"> </p>
+
+### Crear métodos genéricos
+
+Código: `public static <T> tipoDevolver nombreMetodo(T a){}`
+
+Ejemplos de métodos 
+
+En el segundo método se especifica que el tipo genérico es una interfaz Comparable ya que el método compareTo() necesita la interfaz. 
+
+IMPORTANTE: solo se le podrá pasar datos de tipo Comparable.
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/224610853-68664704-85f6-4a1b-b889-ad51da3e67df.png"> </p>
+
+
+
 
 ## Herencia
 
@@ -255,7 +463,13 @@ Si un hijo tiene un método con el mismo nombre nos saldrá un error informandon
 
 ### IMPORTANTE
 
+Si se implementa el método abstracto y tiene un hijo, que a su vez tiene otro hijo y este implementa el método abstracto, no hace falta que su padre también lo haga.
+
+***
+
 Cuando se define un método como abstracto también se tiene que definir a la clase. Se usa cuando los datos tienen que ser diferentes.
+
+***
 
 Ejemplo de definir un método abstracto sin hacerlo antes en el padre.
 
@@ -281,7 +495,14 @@ Definir una clase abstracta: `abstract class nombreClase{}`
 
 <p align="center"> <img src="https://user-images.githubusercontent.com/92431188/223022047-ab371d8e-0cb3-4d1f-abe7-1e39946690d8.png"> </p>
 
+Contaminación de la interfaz -- BUSCAR EN CASA
 
+
+
+
+## Pattern
+
+Los patrones son iguales en todos los lenguajes.
 
 
 
