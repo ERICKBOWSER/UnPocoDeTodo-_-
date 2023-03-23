@@ -497,7 +497,11 @@ Definir una clase abstracta: `abstract class nombreClase{}`
 
 Contaminación de la interfaz -- BUSCAR EN CASA
 
+## Expresiones lambda
 
+Función anónima, funciones de cierre, Closures(método anónimo).
+
+Implementan un método definido en una Interface funcional.
 
 
 ## Pattern
