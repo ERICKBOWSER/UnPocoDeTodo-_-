@@ -435,6 +435,12 @@ IMPORTANTE: esto solo se puede hacer ya que cuando se creo al empleado se hizo d
 
 ## Clases y métodos final
 
+### IMPORTANTE
+
+Al definir una clase como final, sus métodos también cambian sin tocarlos.
+
+***
+
 ### Clases final
 
 Se usa para que por ejemplo no se puedan crear más hijos de una clase.
@@ -470,6 +476,11 @@ Si se implementa el método abstracto y tiene un hijo, que a su vez tiene otro h
 Cuando se define un método como abstracto también se tiene que definir a la clase. Se usa cuando los datos tienen que ser diferentes.
 
 ***
+
+Si no se especifica el tipo de privacidad en la clase puede dar fallos.
+
+***
+
 
 Ejemplo de definir un método abstracto sin hacerlo antes en el padre.
 
