@@ -519,7 +519,9 @@ Implementan un método definido en una Interface funcional.
 
 Los patrones son iguales en todos los lenguajes.
 
+***
 
+Hay que tener cuidado con la \ al implementarlo en java ya que pide \\, cosa que solo hace falta colocar uno en programas de ayuda.
 
 
 
