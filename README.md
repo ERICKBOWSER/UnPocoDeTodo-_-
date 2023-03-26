@@ -13,7 +13,9 @@ Ejemplo: `Arrays.sort();`
 
 ## Teoría
 
-Sobrecarga de métodos: dependiendo del número de parametros y el tipo del parametro se usa uno u otro. Estos tienen que estar definidos.
+**Sobrecarga de métodos**: dependiendo del número de parametros y el tipo del parametro se usa uno u otro. Estos tienen que estar definidos.
+
+**Composición**: consiste en crear una clase nueva agrupando objetos de clases que ya existen
 
 ## Cosas a tener en cuenta
 
