@@ -15,7 +15,29 @@ Ejemplo: `Arrays.sort();`
 
 **Sobrecarga de métodos**: dependiendo del número de parametros y el tipo del parametro se usa uno u otro. Estos tienen que estar definidos.
 
-**Composición**: consiste en crear una clase nueva agrupando objetos de clases que ya existen
+### Composición
+
+La composición consiste en crear una clase nueva agrupando objetos de clases que ya existen. 
+Ejemplo: de clase Vehiculo y Cliente se crea la clase VehiculoAlquilado la cuál relaciona una instancia de la clase Vehiculo con otra de Cliente y crea objetos que almacenan relaciones entre las dos.
+
+
+La **composición débil** también conocida como **agregación**, consiste en que una clase A(VehiculoAlquilado) agrupa a uno o varios elementos de la clase B(Vehiculo/Cliente). Se dice que esta composición es débil porque un objeto Vehiculo o Cliente puede seguir existiendo en el programa independientemente de que exista un objeto VehiculoAlguilado.
+
+UML: se representa mediante diagramas UML usando un rombo sin relleno y la cardinalidad siempre es 1:
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/227802669-a883a2de-849f-4c5c-9840-d4e85c33b6d5.png"> </p>
+
+
+La **composición fuerte** hace referencia a que la relación de vida que hay entre los objetos que la componene está ligada.
+
+Si no existe la clase contenedora A no podría existir la clase contenida B.
+
+Ejemplo: si un objeto Factura se compone de varios objetos LineaFactura, no tiene sentido que exista el objeto LineaFactura no puede ser compartido por varios objetos de tipo Factura.
+
+UML: se representa mediante un rombo con relleno y la cardinalidad siempre es 1:
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/227804075-21129edf-7473-4a61-af7d-53c459f13722.png"> </p>
+
 
 ## Cosas a tener en cuenta
 
@@ -304,6 +326,8 @@ IMPORTANTE: solo se le podrá pasar datos de tipo Comparable.
 
 
 ## Herencia
+
+Capacidad que tienen los lenguajes orientados a objetos para extender clases. La clase en la que se extiende hereda el comportamiento y los atributos de la clase de la que ha sido extendida. 
 
 <p align="center"> <img src="https://user-images.githubusercontent.com/92431188/222995680-3a18aefb-c048-4460-b0ab-1112ce966266.png"> </p>
 
