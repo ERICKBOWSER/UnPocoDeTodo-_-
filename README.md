@@ -327,15 +327,18 @@ IMPORTANTE: solo se le podrá pasar datos de tipo Comparable.
 
 ## Herencia
 
-Capacidad que tienen los lenguajes orientados a objetos para extender clases. La clase en la que se extiende hereda el comportamiento y los atributos de la clase de la que ha sido extendida. 
+Capacidad que tienen los lenguajes orientados a objetos para extender clases. La clase en la que se extiende hereda el comportamiento, los atributos y métodos de la superclase. 
+
+La clase original se denomina clase base, padre o superclase.
+
+La clase que hereda se denomina clase derivada, clase hija o subclase. Es una especialización de la superclase.
 
 <p align="center"> <img src="https://user-images.githubusercontent.com/92431188/222995680-3a18aefb-c048-4460-b0ab-1112ce966266.png"> </p>
 
 
 ### IMPORTANTE
-Los métodos de las clases hijas no son visibles desde la clase padre. Por lo que no puede usarlos.
-***
-La llamada de los métodos hijos no pueden afectar.
+
+La clase hija puede acceder a atributos y métodos de la clase padre (si son visibles) pero los métodos de las clases hijas no son visibles desde la clase padre.
 ***
 **Super** es para la clase padre, y **this** para la propia clase.
 ***
@@ -357,9 +360,14 @@ En Java sólo existe la **herencia simple**, esto es, una clase sólo puede here
 La herencia permite la reutilización del código.
 ***
 Las clases hijas pueden acceder a atributos y métodos de la clase padre(siempre y cuando sean visibles) pero no ocurre lo mismo al contrario.
+
+Un objeto de una superclase no puede acceder a los métodos de una subclase aunque sean públicos.
+
 ***
 La propagación de herencia es que todos los métodos del padre son heredados por los hijos, **el último se conoce como clase FINAL**.
 
+***
+Todas las clases Java extienden de la clase java.lang.Object
 ***
 
 ## Establecer que una clase hereda de otra
@@ -412,6 +420,14 @@ Sobreescribir un método que ya existe en el padre.
 <p align="center"> <img src="https://user-images.githubusercontent.com/92431188/223003183-113cdc8f-de8a-43d7-9fbe-dad478f73e37.png"> </p>
 
 ### Polimorfismo
+
+Polimorfismo significa "la facultad de asumir muchas formas", refiriéndose a la facultad de llamar a métodos sintácticamente iguales a objetos de tipos distintos.
+
+Con la herencia y el polimorfismo se puede sobreescribir cualquier método heredado.
+
+La selección dinámica de métodos implementa el polimorfismo en tiempo de ejecución.
+
+Ejemplo: la sentencia objeto.getAtributos() llama al método getAtributos() de la clase a la que apunta la variable objeto. Si objeto apunta a la clase Deportivo, ejecutará el método de esa clase.
 
 Principio de sustitución: se puede utilizar un objeto de la subclase siempre que el programa espere un objeto de la superclase.
 
