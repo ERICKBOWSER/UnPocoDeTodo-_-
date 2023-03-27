@@ -443,15 +443,29 @@ La máquina virtual de Java es capaz en tiempo de ejecución de saber a que mét
 
 <p align="center"> <img src="https://user-images.githubusercontent.com/92431188/223007839-1985ea8d-d02d-48c1-b2e0-8ac248c0c719.png"> </p>
 
-### Casting de datos
+### Compatibilidad de tipos
 
-Se usa para cambiar el tipo de una variable.
+Las operaciones de casting o conversión de tipos es posible entre objetos que tienen relación de herencia.
 
-`tipo variableNuevo = (tipoACambiar) variableCambiar`
+Una referencia de la superclase puede apuntar un objeto de cualquiera de sus subclases.
 
-<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/223009915-527de311-704c-4d7d-b9a5-1e55ab461efb.png"> </p>
+#### Casting implicito
 
-### Casting de objetos
+Es una conversión ascendente de tipos, denominada "upcasting".
+
+Cualquier referencia de la superclase puede apuntar a una instancia de la superclase o las subclases.
+
+Ejemplo: Vehiculo es el padre y Turismo, Deportivo, Furgoneta los hijos.
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/227994161-36cc938f-e8ef-4eeb-9470-1f725a1d26d1.png"> </p>
+
+IMPORTANTE: aunque miCoche haga referencia a una subclase, solo puede acceder a atributos y métodos de la superclase.
+
+
+
+#### Casting explícito
+
+Es cuando se hace una referencia de una superclase en una subclase.
 
 `tipoNuevaEntidad variablenuevo = (tipoEntidadACambiar) variableCambiar`
 
@@ -474,6 +488,14 @@ De esta forma ya nos salen los métodos del hijo, por lo que ya se le puede apli
 ***
 IMPORTANTE: esto solo se puede hacer ya que cuando se creo al empleado se hizo de tipo Jefatura, si se intenta con un empleado de tipo Empleado daría error.
 ***
+
+### Casting de datos
+
+Se usa para cambiar el tipo de una variable.
+
+`tipo variableNuevo = (tipoACambiar) variableCambiar`
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/223009915-527de311-704c-4d7d-b9a5-1e55ab461efb.png"> </p>
 
 ## Clases y métodos final
 
