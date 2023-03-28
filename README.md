@@ -47,7 +47,9 @@ Forma correcta.
 
 <p align="center"> <img src="https://user-images.githubusercontent.com/92431188/224524332-519e14a7-c3fc-4cc7-8c79-45025ba94703.png"> </p>
 
-Atributos de instancia: son aquellos a los que se acceden con **this** mo
+***
+
+Atributos de instancia: son aquellos a los que se acceden con **this**.
 
 ## Array
 
@@ -57,7 +59,7 @@ Estructura de datos que contiene una colección de valores del mismo tipo.
 
 ¿Para que se usa?
 
-Para almacenar valroes que normalmente tienen alguna relación entre sí.
+Para almacenar valores que normalmente tienen alguna relación entre sí.
 
 Código: `tipo[] nombreArray = new tipo[tamanio]`
 
@@ -182,13 +184,13 @@ Clases más usadas:
 
 ### Declaración
 
-Código: `Set<tipoGenerico> nombreSet = new tipoClase();`
+Código: `Set<tipoGenerico> nombreSet = new tipoSet();`
 
 Ejemplo: `Set<Cliente> clientes = new HashSet();`
 
 ### Inicialización
 
-Código: nombreSet.add(dato);
+Código: `nombreSet.add(dato);`
 
 Ejemplo: `clientes.add(cliente1);`
 
@@ -202,7 +204,7 @@ Es imprescindible que lleven equals y hashcode para que no se incluyan los datos
 
 ## List
 
-Para poder crear colecciones de tipo List hay que hacer usando las clases ArrayList, LinkedList, Vector o CopyOnWriteArrayList.
+Para poder crear colecciones de tipo List hay que hacerlo usando las clases ArrayList, LinkedList, Vector o CopyOnWriteArrayList.
 
 <p align="center"> <img src="https://user-images.githubusercontent.com/92431188/224618287-70d1b843-6ebd-46a9-84c9-7f3065df873d.png"> </p>
 
