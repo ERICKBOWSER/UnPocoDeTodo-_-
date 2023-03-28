@@ -465,7 +465,7 @@ IMPORTANTE: aunque miCoche haga referencia a una subclase, solo puede acceder a 
 
 #### Casting explícito
 
-Es cuando se hace una referencia de una superclase en una subclase.
+Es una conversión descendente de tipo en la cuál se hace una referencia de una superclase en una subclase denominada "downcasting".
 
 `tipoNuevaEntidad variablenuevo = (tipoEntidadACambiar) variableCambiar`
 
