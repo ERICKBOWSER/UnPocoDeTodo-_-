@@ -333,7 +333,7 @@ Capacidad que tienen los lenguajes orientados a objetos para extender clases. La
 
 La clase original se denomina clase base, padre o superclase.
 
-La clase que hereda se denomina clase derivada, clase hija o subclase. Es una especialización de la superclase.
+La clase que hereda se denomina clase derivada, hija o subclase. Es una especialización de la superclase.
 
 <p align="center"> <img src="https://user-images.githubusercontent.com/92431188/222995680-3a18aefb-c048-4460-b0ab-1112ce966266.png"> </p>
 
@@ -358,10 +358,10 @@ La superclase de todas las clases es **Object**.
 Es posible acceder a los atributos de la superclase si no son **private**. Pero si lo son se puede acceder mediante sus métodos **getters** y **setters**.
 ***
 Los únicos métodos que no se heredan en una jerarquía de herencia son los constructores. Por lo que hay que crear un constructor para inicializar en todas las clases que heredan.
-***
+
 Al implementar constructores es **obligatorio** llamar al constructor de la superclase en el constructor de la clase hija, haciendo uso de la instrucción **super()**.
 
-super() es encarga de llamar al constructor de la clase padre para darle un estado inicial a la clase del contructor hijo.
+super() se encarga de llamar al constructor de la clase padre para darle un estado inicial a la clase del contructor hijo.
 
 <p align="center"> <img src="https://user-images.githubusercontent.com/92431188/218369175-0ee220b4-1047-49bc-a1ee-29704a881554.png"> </p>
 
@@ -369,10 +369,6 @@ super() es encarga de llamar al constructor de la clase padre para darle un esta
 En Java sólo existe la **herencia simple**, esto es, una clase sólo puede heredar de otra, aunque a su vez esta otra herede de otra, y así sucesivamente.
 ***
 La herencia permite la reutilización del código.
-***
-Las clases hijas pueden acceder a atributos y métodos de la clase padre(siempre y cuando sean visibles) pero no ocurre lo mismo al contrario.
-
-Un objeto de una superclase no puede acceder a los métodos de una subclase aunque sean públicos.
 
 ***
 La propagación de herencia es que todos los métodos del padre son heredados por los hijos, **el último se conoce como clase FINAL**.
@@ -391,7 +387,7 @@ Definir una subclase implica:
 * Una subclase hereda todos los miembros de su superclase, excepto los constructores, y:
 * * No tiene acceso a los miembros private de su superclase.
 * * Puede acceder a los miembros public y protected de la superclase.
-* Un subclase puede añadir sus propios atributos y métodos. Si el nombre de algún miembro coincide con el de un miembro heredado, éste último queda oculto para la subclase.
+* Una subclase puede añadir sus propios atributos y métodos. Si el nombre de algún miembro coincide con el de un miembro heredado, éste último queda oculto para la subclase.
 * Propagación de herencia: los miembros heredados por una subclase pueden ser heredados por más subclases de ella.
 
 ## Utilizar métodos de la superclase
@@ -535,7 +531,7 @@ Se usa para que por ejemplo no se puedan crear más hijos de una clase.
 
 Código: `public final class nombreClase extends claseExtiende{}`
 
-Esto hace que ya no se puedan crear más herencia de el.
+Esto hace que ya no se pueda crear más herencia de esta clase.
 
 <p align="center"> <img src="https://user-images.githubusercontent.com/92431188/223016971-a2a1407a-c000-457f-bf04-236595c22c95.png"> </p>
 
@@ -569,7 +565,7 @@ Si se implementa el método abstracto y tiene un hijo, que a su vez tiene otro h
 
 ***
 
-Cuando se define un método como abstracto también se tiene que definir a la clase. Se usa cuando los datos tienen que ser diferentes.
+Cuando se define un método como abstracto también se tiene que definir a la clase.
 
 ***
 
