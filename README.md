@@ -335,6 +335,15 @@ La clase que hereda se denomina clase derivada, clase hija o subclase. Es una es
 
 <p align="center"> <img src="https://user-images.githubusercontent.com/92431188/222995680-3a18aefb-c048-4460-b0ab-1112ce966266.png"> </p>
 
+### Jerarquía de herencia
+
+Todas las clases están relacionadas en una única jerarquía de herencia puesto que toda clase hereda explícitamente de otra o bien implicitamente de **Object**.
+
+### Extensión de clases 
+
+Para indicar que una claes extiende a otra se utiliza la palabra reservada **extends**.
+
+Código: `public class nombreSubclase extends nombreSuperclase{}`
 
 ### IMPORTANTE
 
@@ -427,7 +436,7 @@ Con la herencia y el polimorfismo se puede sobreescribir cualquier método hered
 
 La selección dinámica de métodos implementa el polimorfismo en tiempo de ejecución.
 
-Ejemplo: la sentencia objeto.getAtributos() llama al método getAtributos() de la clase a la que apunta la variable objeto. Si objeto apunta a la clase Deportivo, ejecutará el método de esa clase.
+Ejemplo: la sentencia objeto.getAtributos() llama al método getAtributos() de la clase a la que apunta la variable objeto. Si objeto apunta a la clase Deportivo, ejecutará el método de esa clase. Por lo tanto el método getAtributos() es polimórfico.
 
 Principio de sustitución: se puede utilizar un objeto de la subclase siempre que el programa espere un objeto de la superclase.
 
@@ -455,6 +464,8 @@ Es una conversión ascendente de tipos, denominada "upcasting".
 
 Cualquier referencia de la superclase puede apuntar a una instancia de la superclase o las subclases.
 
+Se puede declarar una clase padre y se instancia como clase hija y no hay que indicar nada ya que es una conversión "normal".
+
 Ejemplo: Vehiculo es el padre y Turismo, Deportivo, Furgoneta los hijos.
 
 <p align="center"> <img src="https://user-images.githubusercontent.com/92431188/227994161-36cc938f-e8ef-4eeb-9470-1f725a1d26d1.png"> </p>
@@ -466,6 +477,8 @@ IMPORTANTE: aunque miCoche haga referencia a una subclase, solo puede acceder a 
 #### Casting explícito
 
 Es una conversión descendente de tipo en la cuál se hace una referencia de una superclase en una subclase denominada "downcasting".
+
+Se declara una clase hija y se instancia como clase padre, este tipo de conversión es propensa a errores. Hay que indicar la conversión mediante un casting.
 
 `tipoNuevaEntidad variablenuevo = (tipoEntidadACambiar) variableCambiar`
 
@@ -489,6 +502,15 @@ De esta forma ya nos salen los métodos del hijo, por lo que ya se le puede apli
 IMPORTANTE: esto solo se puede hacer ya que cuando se creo al empleado se hizo de tipo Jefatura, si se intenta con un empleado de tipo Empleado daría error.
 ***
 
+### instanceof
+
+Este operador nos dice si una referencia es de un determinado tipo y sirve para pasar el test de "algo ES UN lo que sea".
+
+Código: `nombreClasesComparar instanceof claseComparar`
+
+Ejemplo: `if(misVehiculos[i] instanceof Turismo){ejecutar}`
+
+
 ### Casting de datos
 
 Se usa para cambiar el tipo de una variable.
@@ -509,11 +531,13 @@ Al definir una clase como final, sus métodos también cambian sin tocarlos.
 
 Se usa para que por ejemplo no se puedan crear más hijos de una clase.
 
-Código: `final class nombreClase extends claseExtiende{}`
+Código: `public final class nombreClase extends claseExtiende{}`
 
-Esto hace que ya no se puedan crear más herencias de ella.
+Esto hace que ya no se puedan crear más herencia de el.
 
 <p align="center"> <img src="https://user-images.githubusercontent.com/92431188/223016971-a2a1407a-c000-457f-bf04-236595c22c95.png"> </p>
+
+IMPORTANTE: al convertir una clase en final, automáticamente todos los métodos de esa clase también se convierten en final.
 
 ### Métodos final
 
@@ -531,9 +555,15 @@ Si un hijo tiene un método con el mismo nombre nos saldrá un error informandon
 
 <p align="center"> <img src="https://user-images.githubusercontent.com/92431188/223020761-1bb33056-51a5-4fa6-8c1b-45ae3fc07d41.png"> </p>
 
+¿Cuándo sabemos que una clase es abstracta?
+
+Cuando diseñamos la clase para ser genérica y su razón de existir es proporcionar atributos y métodos compartidos por las subclases.
+
+Cuando existen métodos que están presentes en toda la jerarquía pero con distinto código en cada una de ellas.
+
 ### IMPORTANTE
 
-Si se implementa el método abstracto y tiene un hijo, que a su vez tiene otro hijo y este implementa el método abstracto, no hace falta que su padre también lo haga.
+Si se implementa el método abstracto y tiene un hijo, que a su vez tiene otro hijo y este implementa el método abstracto, no hace falta que el padre de este también lo haga.
 
 ***
 
@@ -544,6 +574,11 @@ Cuando se define un método como abstracto también se tiene que definir a la cl
 Si no se especifica el tipo de privacidad en la clase puede dar fallos.
 
 ***
+
+No es obligatorio que la clase abstracta contenga métodos abstractos.
+
+***
+
 
 
 Ejemplo de definir un método abstracto sin hacerlo antes en el padre.
@@ -569,6 +604,80 @@ Definir un método abstracto: `public abstract tipo nombreMetodo();`
 Definir una clase abstracta: `abstract class nombreClase{}`
 
 <p align="center"> <img src="https://user-images.githubusercontent.com/92431188/223022047-ab371d8e-0cb3-4d1f-abe7-1e39946690d8.png"> </p>
+
+## Interfaces
+
+Una interfaz es una clase abstracta pura, es decir, una clase donde todos los métodos son abstractos. Permite establecer la forma de una clase pero no bloques de código.
+
+Puede contener atributos, pero tienen que ser public, static y final.
+
+Todos los métodos que declara una interfaz son siempre public, y por defecto abstract. Los métodos no pueden ser static ni final.
+
+Código: `public interface nombreInterfaz{}`
+
+Ejemplo:
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/228170674-25a03a05-85bd-4082-811f-340ff8e2c7a6.png"> </p>
+
+Una clase puede implementar varias interfaces,  se utiliza la palabra **implements nombreInterfaz1, nombreInterfaz2**. La clase que lo implemente esta obligada a codificar todos los métodos de la interfaz.
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/228172058-11eb3d90-9238-4bd8-9e92-c9bf55977ae4.png"> </p>
+
+### IMPORTANTE
+
+Los métodos **static** de una interfaz no se pueden implementar.
+***
+Los métodos **default** se pueden implementar de forma opcional, ya que traen código por defecto.
+***
+Permite herencia múltiple mediante interfaces.
+***
+Una interfaz sólo puede heredar de otra interfaz.
+
+Propagación de herencia: una interfaz que hereda de otra no implementa los métodos heredados, lo harán las clases concretas.
+***
+Una interfaz no puede implementar otra interfaz.
+***
+
+
+
+
+## Composición
+
+Consiste en crear clases incluyendo objetos de otras clases.
+
+Ejemplo: 
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/228175447-75e239a8-e320-4f46-be31-17de37f5c106.png"> </p>
+
+Se puede acceder, usando un objeto de clase contenedor a métodos públicos de las clases contenidas:
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/228175981-13e7737c-9f9a-48a9-b330-3b8ce077bcc2.png"> </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Contaminación de la interfaz -- BUSCAR EN CASA
 
