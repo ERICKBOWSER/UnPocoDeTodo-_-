@@ -444,7 +444,7 @@ Ejemplo: la sentencia objeto.getAtributos() llama al método getAtributos() de l
 
 Principio de sustitución: se puede utilizar un objeto de la subclase siempre que el programa espere un objeto de la superclase.
 
-O lo que es lo mismo: un objeto su puede comportar de diferentes formas dependiendo del contexto. Las variables objeto son polimórficas.
+O lo que es lo mismo: un objeto se puede comportar de diferentes formas dependiendo del contexto. Las variables objeto son polimórficas.
 
 En este ejemplo, el array misEmpleados esta esperando un nueva instancia de tipo Empleado, pero en cambio se le pasa un objeto de tipo Jefatura, a esto se le denomina principio de sustitución.
 
@@ -531,9 +531,9 @@ Al definir una clase como final, sus métodos también cambian sin tocarlos.
 
 ***
 
-### Clases final
+### Clase final
 
-Se usa para que por ejemplo no se puedan crear más hijos de una clase.
+Se usa para que no se puedan crear más hijos de una clase.
 
 Código: `public final class nombreClase extends claseExtiende{}`
 
@@ -605,7 +605,7 @@ Definir un método abstracto: `public abstract tipo nombreMetodo();`
 
 <p align="center"> <img src="https://user-images.githubusercontent.com/92431188/223021752-1403d23a-5a67-4292-b7d9-8395a41a001b.png"> </p>
 
-Definir una clase abstracta: `abstract class nombreClase{}`
+Definir una clase abstracta: `public abstract class nombreClase{}`
 
 <p align="center"> <img src="https://user-images.githubusercontent.com/92431188/223022047-ab371d8e-0cb3-4d1f-abe7-1e39946690d8.png"> </p>
 
