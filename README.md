@@ -15,28 +15,6 @@ Ejemplo: `Arrays.sort();`
 
 **Sobrecarga de métodos**: dependiendo del número de parametros y el tipo del parametro se usa uno u otro. Estos tienen que estar definidos.
 
-### Composición
-
-La composición consiste en crear una clase nueva agrupando objetos de clases que ya existen. 
-Ejemplo: de clase Vehiculo y Cliente se crea la clase VehiculoAlquilado la cuál relaciona una instancia de la clase Vehiculo con otra de Cliente y crea objetos que almacenan relaciones entre las dos.
-
-
-La **composición débil** también conocida como **agregación**, consiste en que una clase A(VehiculoAlquilado) agrupa a uno o varios elementos de la clase B(Vehiculo/Cliente). Se dice que esta composición es débil porque un objeto Vehiculo o Cliente puede seguir existiendo en el programa independientemente de que exista un objeto VehiculoAlguilado.
-
-UML: se representa mediante diagramas UML usando un rombo sin relleno y la cardinalidad siempre es 1:
-
-<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/227802669-a883a2de-849f-4c5c-9840-d4e85c33b6d5.png"> </p>
-
-
-La **composición fuerte** hace referencia a que la relación de vida que hay entre los objetos que la componene está ligada.
-
-Si no existe la clase contenedora A no podría existir la clase contenida B.
-
-Ejemplo: si un objeto Factura se compone de varios objetos LineaFactura, no tiene sentido que exista el objeto LineaFactura no puede ser compartido por varios objetos de tipo Factura.
-
-UML: se representa mediante un rombo con relleno y la cardinalidad siempre es 1:
-
-<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/227804075-21129edf-7473-4a61-af7d-53c459f13722.png"> </p>
 
 
 ## Cosas a tener en cuenta
@@ -324,7 +302,35 @@ IMPORTANTE: solo se le podrá pasar datos de tipo Comparable.
 
 <p align="center"> <img src="https://user-images.githubusercontent.com/92431188/224610853-68664704-85f6-4a1b-b889-ad51da3e67df.png"> </p>
 
+## Composición
 
+La composición consiste en crear una clase nueva agrupando objetos de clases que ya existen. 
+Ejemplo: de clase Vehiculo y Cliente se crea la clase VehiculoAlquilado la cuál relaciona una instancia de la clase Vehiculo con otra de Cliente y crea objetos que almacenan relaciones entre las dos.
+
+Ejemplo: 
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/228175447-75e239a8-e320-4f46-be31-17de37f5c106.png"> </p>
+
+Se puede acceder, usando un objeto de clase contenedor a métodos públicos de las clases contenidas:
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/228175981-13e7737c-9f9a-48a9-b330-3b8ce077bcc2.png"> </p>
+
+La **composición débil** también conocida como **agregación**, consiste en que una clase A(VehiculoAlquilado) agrupa a uno o varios elementos de la clase B(Vehiculo/Cliente). Se dice que esta composición es débil porque un objeto Vehiculo o Cliente puede seguir existiendo en el programa independientemente de que exista un objeto VehiculoAlguilado.
+
+UML: se representa mediante diagramas UML usando un rombo sin relleno y la cardinalidad siempre es 1:
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/227802669-a883a2de-849f-4c5c-9840-d4e85c33b6d5.png"> </p>
+
+
+La **composición fuerte** hace referencia a que la relación de vida que hay entre los objetos que la componen está ligada.
+
+Si no existe la clase contenedora A no podría existir la clase contenida B.
+
+Ejemplo: si un objeto Factura se compone de varios objetos LineaFactura, no tiene sentido que exista el objeto LineaFactura si no puede ser compartido por varios objetos de tipo Factura.
+
+UML: se representa mediante un rombo con relleno y la cardinalidad siempre es 1:
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/227804075-21129edf-7473-4a61-af7d-53c459f13722.png"> </p>
 
 
 ## Herencia
@@ -343,7 +349,7 @@ Todas las clases están relacionadas en una única jerarquía de herencia puesto
 
 ### Extensión de clases 
 
-Para indicar que una claes extiende a otra se utiliza la palabra reservada **extends**.
+Para indicar que una clase extiende a otra se utiliza la palabra reservada **extends**.
 
 Código: `public class nombreSubclase extends nombreSuperclase{}`
 
@@ -629,27 +635,17 @@ Los métodos **default** se pueden implementar de forma opcional, ya que traen c
 ***
 Permite herencia múltiple mediante interfaces.
 ***
-Una interfaz sólo puede heredar de otra interfaz.
+Una interfaz sólo puede heredar de otra interfaz(extends).
 
 Propagación de herencia: una interfaz que hereda de otra no implementa los métodos heredados, lo harán las clases concretas.
 ***
-Una interfaz no puede implementar otra interfaz.
+Una interfaz no puede implementar otra interfaz(implements).
 ***
 
 
 
 
-## Composición
 
-Consiste en crear clases incluyendo objetos de otras clases.
-
-Ejemplo: 
-
-<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/228175447-75e239a8-e320-4f46-be31-17de37f5c106.png"> </p>
-
-Se puede acceder, usando un objeto de clase contenedor a métodos públicos de las clases contenidas:
-
-<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/228175981-13e7737c-9f9a-48a9-b330-3b8ce077bcc2.png"> </p>
 
 
 
@@ -679,11 +675,47 @@ Se puede acceder, usando un objeto de clase contenedor a métodos públicos de l
 
 Contaminación de la interfaz -- BUSCAR EN CASA
 
-## Expresiones lambda
+## Lambda
 
-Función anónima, funciones de cierre, Closures(método anónimo).
+Una expresión lambda es una función sin nombre.
 
-Implementan un método definido en una Interface funcional.
+Código: `(parámetros) -> {Cuerpo de la expresión Lambda}`
+
+Estructura:
+* Parámetros: se declaran los tipos de datos y nombres de los argumentos.
+* Separador: es el operador lambda(->).
+* Cuerpo: es donde se evalúan los parámetros de entrada y se realiza el retorno de algún valor si es necesario.
+
+### Interfaces funcionales
+
+* **Function<T,R>**: función que toma un sólo argumento y devuelve un tipo de dato distinto. Mapea un objeto T en otro objeto R. Para usar el objeto de tipo Function hay que llamar al método **apply(T)** que devuelve el objeto R.
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/228478657-6cf18e11-e981-4f4d-83ac-821ef454003b.png"> </p>
+
+* Predicate<T> : función que tiene un sólo parámetros y devuelve un booleano. Se usa para comprobar si T cumple cierta condición. Para usarlo hay que llamar al método **test(T)**.
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/228480258-be4721d2-0ff9-4708-85b3-a42e7edb6289.png"> </p>
+  
+* Consumer<T> : función que toma un sólo argumento y no devuelve nada, porque produce un resultado. Para usarlo hay que llamar al método **accept(T)**.
+  
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/228482184-3a232331-ec03-4eff-acc5-be034cf12c5d.png"> </p>
+
+* Supplier<T> : función que no recibe parámetros pero produce un valor de tipo T. Para usarlo hay que llamar la método **get()**.
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/228484559-b351e507-0379-4ee2-b7a1-5dc9391a0cde.png"> </p>
+
+
+
+### IMPORTANTE
+
+Una expresión puede no recibir parámetros.
+
+Ejemplo: `( ) -> {System.out.println("Hola")};`
+
+***
+
+No es necesario colocar un return y las llaves si existe una sola líneva de evaluación y retorno.
+
 
 
 ## Pattern
