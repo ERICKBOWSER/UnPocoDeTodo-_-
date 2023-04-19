@@ -15,6 +15,10 @@ Ejemplo: `Arrays.sort();`
 
 **Sobrecarga de métodos**: dependiendo del número de parametros y el tipo del parametro se usa uno u otro. Estos tienen que estar definidos.
 
+### Clase POJO (Plain Old Java Object)
+
+Un "Objeto Java Plano Antiguo", es una instancia de una clase que no extiende ni implementa nada en especial. Sirve para enfatizar el uso de clases simples y que no dependen de un framework.
+
 
 
 ## Cosas a tener en cuenta
