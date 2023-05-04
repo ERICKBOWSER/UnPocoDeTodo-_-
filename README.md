@@ -720,6 +720,19 @@ Ejemplo: `( ) -> {System.out.println("Hola")};`
 
 No es necesario colocar un return y las llaves si existe una sola líneva de evaluación y retorno.
 
+## Escribir ficheros de texto 
+
+### IMPORTANTE
+Si queremos acceder a un fichero ya creado para agregar información al final del mismo habrá que indicarlo usando otro constructor de la clase FileWriter:
+
+Código = ```FileWriter fichero = new FileWriter(idFichero, true);``
+
+Modificar esta linea: 
+
+![image](https://user-images.githubusercontent.com/92431188/236011916-20f618c9-ca8c-4e84-8023-2b6c22eee1fd.png)
+
+Este constructor tiene como segundo parámetro un dato booleano que permite agregar información al final del fichero.
+
 
 
 ## Pattern
