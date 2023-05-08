@@ -743,7 +743,11 @@ Los patrones son iguales en todos los lenguajes.
 
 Hay que tener cuidado con la \ al implementarlo en java ya que pide \\, cosa que solo hace falta colocar uno en programas de ayuda.
 
+# Bases de datos
 
+## Java DataBase Connectivity JDBC
+
+Es un API que permite la ejecución de operaciones sobre bases de datos, 
 
 
 
