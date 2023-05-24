@@ -1,4 +1,4 @@
-# Programación
+# Java
 
 ## API de Java
 
@@ -13,7 +13,13 @@ Ejemplo: `Arrays.sort();`
 
 ## Teoría
 
-Sobrecarga de métodos: dependiendo del número de parametros y el tipo del parametro se usa uno u otro. Estos tienen que estar definidos.
+**Sobrecarga de métodos**: dependiendo del número de parametros y el tipo del parametro se usa uno u otro. Estos tienen que estar definidos.
+
+### Clase POJO (Plain Old Java Object)
+
+Un "Objeto Java Plano Antiguo", es una instancia de una clase que no extiende ni implementa nada en especial. Sirve para enfatizar el uso de clases simples y que no dependen de un framework.
+
+
 
 ## Cosas a tener en cuenta
 
@@ -23,7 +29,9 @@ Forma correcta.
 
 <p align="center"> <img src="https://user-images.githubusercontent.com/92431188/224524332-519e14a7-c3fc-4cc7-8c79-45025ba94703.png"> </p>
 
+***
 
+Atributos de instancia: son aquellos a los que se acceden con **this**.
 
 ## Array
 
@@ -33,7 +41,7 @@ Estructura de datos que contiene una colección de valores del mismo tipo.
 
 ¿Para que se usa?
 
-Para almacenar valroes que normalmente tienen alguna relación entre sí.
+Para almacenar valores que normalmente tienen alguna relación entre sí.
 
 Código: `tipo[] nombreArray = new tipo[tamanio]`
 
@@ -158,13 +166,13 @@ Clases más usadas:
 
 ### Declaración
 
-Código: `Set<tipoGenerico> nombreSet = new tipoClase();`
+Código: `Set<tipoGenerico> nombreSet = new tipoSet();`
 
 Ejemplo: `Set<Cliente> clientes = new HashSet();`
 
 ### Inicialización
 
-Código: nombreSet.add(dato);
+Código: `nombreSet.add(dato);`
 
 Ejemplo: `clientes.add(cliente1);`
 
@@ -178,7 +186,7 @@ Es imprescindible que lleven equals y hashcode para que no se incluyan los datos
 
 ## List
 
-Para poder crear colecciones de tipo List hay que hacer usando las clases ArrayList, LinkedList, Vector o CopyOnWriteArrayList.
+Para poder crear colecciones de tipo List hay que hacerlo usando las clases ArrayList, LinkedList, Vector o CopyOnWriteArrayList.
 
 <p align="center"> <img src="https://user-images.githubusercontent.com/92431188/224618287-70d1b843-6ebd-46a9-84c9-7f3065df873d.png"> </p>
 
@@ -298,18 +306,60 @@ IMPORTANTE: solo se le podrá pasar datos de tipo Comparable.
 
 <p align="center"> <img src="https://user-images.githubusercontent.com/92431188/224610853-68664704-85f6-4a1b-b889-ad51da3e67df.png"> </p>
 
+## Composición
 
+La composición consiste en crear una clase nueva agrupando objetos de clases que ya existen. 
+Ejemplo: de clase Vehiculo y Cliente se crea la clase VehiculoAlquilado la cuál relaciona una instancia de la clase Vehiculo con otra de Cliente y crea objetos que almacenan relaciones entre las dos.
+
+Ejemplo: 
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/228175447-75e239a8-e320-4f46-be31-17de37f5c106.png"> </p>
+
+Se puede acceder, usando un objeto de clase contenedor a métodos públicos de las clases contenidas:
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/228175981-13e7737c-9f9a-48a9-b330-3b8ce077bcc2.png"> </p>
+
+La **composición débil** también conocida como **agregación**, consiste en que una clase A(VehiculoAlquilado) agrupa a uno o varios elementos de la clase B(Vehiculo/Cliente). Se dice que esta composición es débil porque un objeto Vehiculo o Cliente puede seguir existiendo en el programa independientemente de que exista un objeto VehiculoAlguilado.
+
+UML: se representa mediante diagramas UML usando un rombo sin relleno y la cardinalidad siempre es 1:
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/227802669-a883a2de-849f-4c5c-9840-d4e85c33b6d5.png"> </p>
+
+
+La **composición fuerte** hace referencia a que la relación de vida que hay entre los objetos que la componen está ligada.
+
+Si no existe la clase contenedora A no podría existir la clase contenida B.
+
+Ejemplo: si un objeto Factura se compone de varios objetos LineaFactura, no tiene sentido que exista el objeto LineaFactura si no puede ser compartido por varios objetos de tipo Factura.
+
+UML: se representa mediante un rombo con relleno y la cardinalidad siempre es 1:
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/227804075-21129edf-7473-4a61-af7d-53c459f13722.png"> </p>
 
 
 ## Herencia
 
+Capacidad que tienen los lenguajes orientados a objetos para extender clases. La clase en la que se extiende hereda el comportamiento, los atributos y métodos de la superclase. 
+
+La clase original se denomina clase base, padre o superclase.
+
+La clase que hereda se denomina clase derivada, hija o subclase. Es una especialización de la superclase.
+
 <p align="center"> <img src="https://user-images.githubusercontent.com/92431188/222995680-3a18aefb-c048-4460-b0ab-1112ce966266.png"> </p>
 
+### Jerarquía de herencia
+
+Todas las clases están relacionadas en una única jerarquía de herencia puesto que toda clase hereda explícitamente de otra o bien implicitamente de **Object**.
+
+### Extensión de clases 
+
+Para indicar que una clase extiende a otra se utiliza la palabra reservada **extends**.
+
+Código: `public class nombreSubclase extends nombreSuperclase{}`
 
 ### IMPORTANTE
-Los métodos de las clases hijas no son visibles desde la clase padre. Por lo que no puede usarlos.
-***
-La llamada de los métodos hijos no pueden afectar.
+
+La clase hija puede acceder a atributos y métodos de la clase padre (si son visibles) pero los métodos de las clases hijas no son visibles desde la clase padre.
 ***
 **Super** es para la clase padre, y **this** para la propia clase.
 ***
@@ -318,10 +368,10 @@ La superclase de todas las clases es **Object**.
 Es posible acceder a los atributos de la superclase si no son **private**. Pero si lo son se puede acceder mediante sus métodos **getters** y **setters**.
 ***
 Los únicos métodos que no se heredan en una jerarquía de herencia son los constructores. Por lo que hay que crear un constructor para inicializar en todas las clases que heredan.
-***
+
 Al implementar constructores es **obligatorio** llamar al constructor de la superclase en el constructor de la clase hija, haciendo uso de la instrucción **super()**.
 
-super() es encarga de llamar al constructor de la clase padre para darle un estado inicial a la clase del contructor hijo.
+super() se encarga de llamar al constructor de la clase padre para darle un estado inicial a la clase del contructor hijo.
 
 <p align="center"> <img src="https://user-images.githubusercontent.com/92431188/218369175-0ee220b4-1047-49bc-a1ee-29704a881554.png"> </p>
 
@@ -329,11 +379,12 @@ super() es encarga de llamar al constructor de la clase padre para darle un esta
 En Java sólo existe la **herencia simple**, esto es, una clase sólo puede heredar de otra, aunque a su vez esta otra herede de otra, y así sucesivamente.
 ***
 La herencia permite la reutilización del código.
-***
-Las clases hijas pueden acceder a atributos y métodos de la clase padre(siempre y cuando sean visibles) pero no ocurre lo mismo al contrario.
+
 ***
 La propagación de herencia es que todos los métodos del padre son heredados por los hijos, **el último se conoce como clase FINAL**.
 
+***
+Todas las clases Java extienden de la clase java.lang.Object
 ***
 
 ## Establecer que una clase hereda de otra
@@ -346,7 +397,7 @@ Definir una subclase implica:
 * Una subclase hereda todos los miembros de su superclase, excepto los constructores, y:
 * * No tiene acceso a los miembros private de su superclase.
 * * Puede acceder a los miembros public y protected de la superclase.
-* Un subclase puede añadir sus propios atributos y métodos. Si el nombre de algún miembro coincide con el de un miembro heredado, éste último queda oculto para la subclase.
+* Una subclase puede añadir sus propios atributos y métodos. Si el nombre de algún miembro coincide con el de un miembro heredado, éste último queda oculto para la subclase.
 * Propagación de herencia: los miembros heredados por una subclase pueden ser heredados por más subclases de ella.
 
 ## Utilizar métodos de la superclase
@@ -387,9 +438,17 @@ Sobreescribir un método que ya existe en el padre.
 
 ### Polimorfismo
 
+Polimorfismo significa "la facultad de asumir muchas formas", refiriéndose a la facultad de llamar a métodos sintácticamente iguales a objetos de tipos distintos.
+
+Con la herencia y el polimorfismo se puede sobreescribir cualquier método heredado.
+
+La selección dinámica de métodos implementa el polimorfismo en tiempo de ejecución.
+
+Ejemplo: la sentencia objeto.getAtributos() llama al método getAtributos() de la clase a la que apunta la variable objeto. Si objeto apunta a la clase Deportivo, ejecutará el método de esa clase. Por lo tanto el método getAtributos() es polimórfico.
+
 Principio de sustitución: se puede utilizar un objeto de la subclase siempre que el programa espere un objeto de la superclase.
 
-O lo que es lo mismo: un objeto su puede comportar de diferentes formas dependiendo del contexto. Las variables objeto son polimórficas.
+O lo que es lo mismo: un objeto se puede comportar de diferentes formas dependiendo del contexto. Las variables objeto son polimórficas.
 
 En este ejemplo, el array misEmpleados esta esperando un nueva instancia de tipo Empleado, pero en cambio se le pasa un objeto de tipo Jefatura, a esto se le denomina principio de sustitución.
 
@@ -401,15 +460,33 @@ La máquina virtual de Java es capaz en tiempo de ejecución de saber a que mét
 
 <p align="center"> <img src="https://user-images.githubusercontent.com/92431188/223007839-1985ea8d-d02d-48c1-b2e0-8ac248c0c719.png"> </p>
 
-### Casting de datos
+### Compatibilidad de tipos
 
-Se usa para cambiar el tipo de una variable.
+Las operaciones de casting o conversión de tipos es posible entre objetos que tienen relación de herencia.
 
-`tipo variableNuevo = (tipoACambiar) variableCambiar`
+Una referencia de la superclase puede apuntar un objeto de cualquiera de sus subclases.
 
-<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/223009915-527de311-704c-4d7d-b9a5-1e55ab461efb.png"> </p>
+#### Casting implicito
 
-### Casting de objetos
+Es una conversión ascendente de tipos, denominada "upcasting".
+
+Cualquier referencia de la superclase puede apuntar a una instancia de la superclase o las subclases.
+
+Se puede declarar una clase padre y se instancia como clase hija y no hay que indicar nada ya que es una conversión "normal".
+
+Ejemplo: Vehiculo es el padre y Turismo, Deportivo, Furgoneta los hijos.
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/227994161-36cc938f-e8ef-4eeb-9470-1f725a1d26d1.png"> </p>
+
+IMPORTANTE: aunque miCoche haga referencia a una subclase, solo puede acceder a atributos y métodos de la superclase.
+
+
+
+#### Casting explícito
+
+Es una conversión descendente de tipo en la cuál se hace una referencia de una superclase en una subclase denominada "downcasting".
+
+Se declara una clase hija y se instancia como clase padre, este tipo de conversión es propensa a errores. Hay que indicar la conversión mediante un casting.
 
 `tipoNuevaEntidad variablenuevo = (tipoEntidadACambiar) variableCambiar`
 
@@ -433,17 +510,42 @@ De esta forma ya nos salen los métodos del hijo, por lo que ya se le puede apli
 IMPORTANTE: esto solo se puede hacer ya que cuando se creo al empleado se hizo de tipo Jefatura, si se intenta con un empleado de tipo Empleado daría error.
 ***
 
+### instanceof
+
+Este operador nos dice si una referencia es de un determinado tipo y sirve para pasar el test de "algo ES UN lo que sea".
+
+Código: `nombreClasesComparar instanceof claseComparar`
+
+Ejemplo: `if(misVehiculos[i] instanceof Turismo){ejecutar}`
+
+
+### Casting de datos
+
+Se usa para cambiar el tipo de una variable.
+
+`tipo variableNuevo = (tipoACambiar) variableCambiar`
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/223009915-527de311-704c-4d7d-b9a5-1e55ab461efb.png"> </p>
+
 ## Clases y métodos final
 
-### Clases final
+### IMPORTANTE
 
-Se usa para que por ejemplo no se puedan crear más hijos de una clase.
+Al definir una clase como final, sus métodos también cambian sin tocarlos.
 
-Código: `final class nombreClase extends claseExtiende{}`
+***
 
-Esto hace que ya no se puedan crear más herencias de ella.
+### Clase final
+
+Se usa para que no se puedan crear más hijos de una clase.
+
+Código: `public final class nombreClase extends claseExtiende{}`
+
+Esto hace que ya no se pueda crear más herencia de esta clase.
 
 <p align="center"> <img src="https://user-images.githubusercontent.com/92431188/223016971-a2a1407a-c000-457f-bf04-236595c22c95.png"> </p>
+
+IMPORTANTE: al convertir una clase en final, automáticamente todos los métodos de esa clase también se convierten en final.
 
 ### Métodos final
 
@@ -461,15 +563,31 @@ Si un hijo tiene un método con el mismo nombre nos saldrá un error informandon
 
 <p align="center"> <img src="https://user-images.githubusercontent.com/92431188/223020761-1bb33056-51a5-4fa6-8c1b-45ae3fc07d41.png"> </p>
 
+¿Cuándo sabemos que una clase es abstracta?
+
+Cuando diseñamos la clase para ser genérica y su razón de existir es proporcionar atributos y métodos compartidos por las subclases.
+
+Cuando existen métodos que están presentes en toda la jerarquía pero con distinto código en cada una de ellas.
+
 ### IMPORTANTE
 
-Si se implementa el método abstracto y tiene un hijo, que a su vez tiene otro hijo y este implementa el método abstracto, no hace falta que su padre también lo haga.
+Si se implementa el método abstracto y tiene un hijo, que a su vez tiene otro hijo y este implementa el método abstracto, no hace falta que el padre de este también lo haga.
 
 ***
 
-Cuando se define un método como abstracto también se tiene que definir a la clase. Se usa cuando los datos tienen que ser diferentes.
+Cuando se define un método como abstracto también se tiene que definir a la clase.
 
 ***
+
+Si no se especifica el tipo de privacidad en la clase puede dar fallos.
+
+***
+
+No es obligatorio que la clase abstracta contenga métodos abstractos.
+
+***
+
+
 
 Ejemplo de definir un método abstracto sin hacerlo antes en el padre.
 
@@ -491,12 +609,129 @@ Definir un método abstracto: `public abstract tipo nombreMetodo();`
 
 <p align="center"> <img src="https://user-images.githubusercontent.com/92431188/223021752-1403d23a-5a67-4292-b7d9-8395a41a001b.png"> </p>
 
-Definir una clase abstracta: `abstract class nombreClase{}`
+Definir una clase abstracta: `public abstract class nombreClase{}`
 
 <p align="center"> <img src="https://user-images.githubusercontent.com/92431188/223022047-ab371d8e-0cb3-4d1f-abe7-1e39946690d8.png"> </p>
 
+## Interfaces
+
+Una interfaz es una clase abstracta pura, es decir, una clase donde todos los métodos son abstractos. Permite establecer la forma de una clase pero no bloques de código.
+
+Puede contener atributos, pero tienen que ser public, static y final.
+
+Todos los métodos que declara una interfaz son siempre public, y por defecto abstract. Los métodos no pueden ser static ni final.
+
+Código: `public interface nombreInterfaz{}`
+
+Ejemplo:
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/228170674-25a03a05-85bd-4082-811f-340ff8e2c7a6.png"> </p>
+
+Una clase puede implementar varias interfaces,  se utiliza la palabra **implements nombreInterfaz1, nombreInterfaz2**. La clase que lo implemente esta obligada a codificar todos los métodos de la interfaz.
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/228172058-11eb3d90-9238-4bd8-9e92-c9bf55977ae4.png"> </p>
+
+### IMPORTANTE
+
+Los métodos **static** de una interfaz no se pueden implementar.
+***
+Los métodos **default** se pueden implementar de forma opcional, ya que traen código por defecto.
+***
+Permite herencia múltiple mediante interfaces.
+***
+Una interfaz sólo puede heredar de otra interfaz(extends).
+
+Propagación de herencia: una interfaz que hereda de otra no implementa los métodos heredados, lo harán las clases concretas.
+***
+Una interfaz no puede implementar otra interfaz(implements).
+***
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Contaminación de la interfaz -- BUSCAR EN CASA
 
+## Lambda
+
+Una expresión lambda es una función sin nombre.
+
+Código: `(parámetros) -> {Cuerpo de la expresión Lambda}`
+
+Estructura:
+* Parámetros: se declaran los tipos de datos y nombres de los argumentos.
+* Separador: es el operador lambda(->).
+* Cuerpo: es donde se evalúan los parámetros de entrada y se realiza el retorno de algún valor si es necesario.
+
+### Interfaces funcionales
+
+* **Function<T,R>**: función que toma un sólo argumento y devuelve un tipo de dato distinto. Mapea un objeto T en otro objeto R. Para usar el objeto de tipo Function hay que llamar al método **apply(T)** que devuelve el objeto R.
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/228478657-6cf18e11-e981-4f4d-83ac-821ef454003b.png"> </p>
+
+* Predicate<T> : función que tiene un sólo parámetros y devuelve un booleano. Se usa para comprobar si T cumple cierta condición. Para usarlo hay que llamar al método **test(T)**.
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/228480258-be4721d2-0ff9-4708-85b3-a42e7edb6289.png"> </p>
+  
+* Consumer<T> : función que toma un sólo argumento y no devuelve nada, porque produce un resultado. Para usarlo hay que llamar al método **accept(T)**.
+  
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/228482184-3a232331-ec03-4eff-acc5-be034cf12c5d.png"> </p>
+
+* Supplier<T> : función que no recibe parámetros pero produce un valor de tipo T. Para usarlo hay que llamar la método **get()**.
+
+<p align="center"> <img src="https://user-images.githubusercontent.com/92431188/228484559-b351e507-0379-4ee2-b7a1-5dc9391a0cde.png"> </p>
+
+
+
+### IMPORTANTE
+
+Una expresión puede no recibir parámetros.
+
+Ejemplo: `( ) -> {System.out.println("Hola")};`
+
+***
+
+No es necesario colocar un return y las llaves si existe una sola líneva de evaluación y retorno.
+
+## Escribir ficheros de texto 
+
+### IMPORTANTE
+Si queremos acceder a un fichero ya creado para agregar información al final del mismo habrá que indicarlo usando otro constructor de la clase FileWriter:
+
+Código = ```FileWriter fichero = new FileWriter(idFichero, true);``
+
+Modificar esta linea: 
+
+![image](https://user-images.githubusercontent.com/92431188/236011916-20f618c9-ca8c-4e84-8023-2b6c22eee1fd.png)
+
+Este constructor tiene como segundo parámetro un dato booleano que permite agregar información al final del fichero.
 
 
 
@@ -504,9 +739,15 @@ Contaminación de la interfaz -- BUSCAR EN CASA
 
 Los patrones son iguales en todos los lenguajes.
 
+***
 
+Hay que tener cuidado con la \ al implementarlo en java ya que pide \\, cosa que solo hace falta colocar uno en programas de ayuda.
 
+# Bases de datos
 
+## Java DataBase Connectivity JDBC
+
+Es un API que permite la ejecución de operaciones sobre bases de datos, 
 
 
 
